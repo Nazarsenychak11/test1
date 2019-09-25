@@ -2,14 +2,21 @@ import {
     loadUsersRequest,
     loadUsersSuccess,
     loadUsersFailure,
-    searchUsersField
+
+    searchUsersByFirstNameChange,
+    searchUsersByLastNameChange,
+    searchUsersByAgeChange,
+    searchUsersBySexChange
 } from './actionTypes';
 
 const initialState = {
     users: [],
     loading: true,
     error: null,
-    searchUsers: ''
+    searchUsersByFirstName: '',
+    searchUsersByLastName: '',
+    searchUsersBySex: ['m', 'f'],
+    searchUsersByAge: '',
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -32,11 +39,26 @@ export default function reducer(state = initialState, { type, payload }) {
                 loading: false,
                 error: payload
             };
-        case searchUsersField: 
+        case searchUsersByFirstNameChange:
             return {
                 ...state,
-                searchUsers: payload
-            }
+                searchUsersByFirstName: payload
+            };
+        case searchUsersByLastNameChange:
+            return {
+                ...state,
+                searchUsersByLastName: payload
+            };
+        case searchUsersByAgeChange:
+            return {
+                ...state,
+                searchUsersByAge: payload
+            };
+        case searchUsersBySexChange:
+            return {
+                ...state,
+                searchUsersBySex: payload
+            };
         default:
             return state;
     }

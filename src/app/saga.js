@@ -7,7 +7,6 @@ import { loadUsersSuccess, loadUsersFailure } from './actions';
 
 function* loadUsersSaga() {
   const response = yield call(getUsers);
-  console.log(response)
 
   if (response) {
     yield put(loadUsersSuccess(response));

@@ -3,10 +3,18 @@ import {
     loadUsersRequest as loadUsersRequestType,
     loadUsersSuccess as loadUsersSuccessType,
     loadUsersFailure as loadUsersFailureType,
-    searchUsersField as searchUsersFieldType
+
+    searchUsersByFirstNameChange as searchUsersByFirstNameChangeType,
+    searchUsersByLastNameChange as searchUsersByLastNameChangeType,
+    searchUsersBySexChange as searchUsersBySexChangeType,
+    searchUsersByAgeChange as searchUsersByAgeChangeType,
 } from './actionTypes';
 
-export const loadUsersRequest = createAction(loadUsersRequestType);
+export const loadUsers = createAction(loadUsersRequestType);
 export const loadUsersSuccess = createAction(loadUsersSuccessType);
 export const loadUsersFailure = createAction(loadUsersFailureType);
-export const searchUsersField = createAction(searchUsersFieldType);
+
+export const searchUsersByFirstNameChange = createAction(searchUsersByFirstNameChangeType);
+export const searchUsersByLastNameChange = createAction(searchUsersByLastNameChangeType);
+export const searchUsersBySexChange = createAction(searchUsersBySexChangeType);
+export const searchUsersByAgeChange = createAction(searchUsersByAgeChangeType);
